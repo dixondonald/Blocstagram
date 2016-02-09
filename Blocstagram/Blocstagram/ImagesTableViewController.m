@@ -13,7 +13,6 @@
 #import "Comment.h"
 
 @interface ImagesTableViewController ()
-
 @end
 
 @implementation ImagesTableViewController
@@ -50,10 +49,19 @@
 #pragma mark - Table view data source
 
 
+- (NSArray *) items {
+    
+    NSArray *items = [DataSource sharedInstance].mediaItems;
+                      
+    return items;
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [DataSource sharedInstance].mediaItems.count;
+    return self.items.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -81,7 +89,7 @@
         [cell.contentView addSubview:imageView];
     }
     
-    Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
+    Media *item = self.items[indexPath.row];
     imageView.image = item.image;
     
     return cell;
@@ -89,7 +97,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
+    Media *item = self.items[indexPath.row];
     UIImage *image = item.image;
     
     return (CGRectGetWidth(self.view.frame) / image.size.width) * image.size.height;
