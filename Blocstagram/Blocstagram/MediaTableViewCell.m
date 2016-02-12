@@ -156,6 +156,10 @@ static NSParagraphStyle *rightParagraphStyle;
 - (void) layoutSubviews {
     [super layoutSubviews];
     
+    if (!self.mediaItem) {
+        return;
+    }
+    
     CGFloat imageHeight = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
     self.mediaImageView.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.bounds), imageHeight);
     
