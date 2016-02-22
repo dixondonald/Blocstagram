@@ -137,9 +137,11 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
                         NSUInteger index = [mutableArrayWithKVO indexOfObject:mediaItem];
-                        [mutableArrayWithKVO replaceObjectAtIndex:index withObject:mediaItem];
-                        
-                    });
+                        if (index != NSNotFound) {
+                            [mutableArrayWithKVO replaceObjectAtIndex:index withObject:mediaItem];
+                        } else {
+                            [mutableArrayWithKVO addObject:mediaItem];
+                        }                    });
                 }
             } else {
                 NSLog(@"Error downloading image: %@", error);
