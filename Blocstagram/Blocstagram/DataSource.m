@@ -289,6 +289,7 @@
                             [self downloadImageForMediaItem:mediaItem];
                         }
                         
+                        
                     } else {
                         [self populateDataWithParameters:nil completionHandler:nil];
                     }
