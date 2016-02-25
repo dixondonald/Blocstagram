@@ -26,6 +26,7 @@
 		82391AE91C63CC7E00DCE963 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82391ADF1C63CC7E00DCE963 /* 10.jpg */; };
 		82391AEC1C63CCC300DCE963 /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82391AEB1C63CCC300DCE963 /* ImagesTableViewController.m */; };
 		823B1FF91C6D19130093DAD1 /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B1FF81C6D19130093DAD1 /* MediaTableViewCell.m */; };
+		8282C8E51C7F87BC00C27BB3 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8282C8E41C7F87BC00C27BB3 /* MediaFullScreenViewController.m */; };
 		82AF5A371C76603B00E2B024 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AF5A361C76603B00E2B024 /* LoginViewController.m */; };
 		82F18C881C6A7A3C00EE83AD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F18C871C6A7A3C00EE83AD /* User.m */; };
 		82F18C8B1C6A7B3000EE83AD /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F18C8A1C6A7B3000EE83AD /* Media.m */; };
@@ -80,6 +81,8 @@
 		82391AEB1C63CCC300DCE963 /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
 		823B1FF71C6D19130093DAD1 /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
 		823B1FF81C6D19130093DAD1 /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
+		8282C8E31C7F87BC00C27BB3 /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaFullScreenViewController.h; sourceTree = "<group>"; };
+		8282C8E41C7F87BC00C27BB3 /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		82AF5A351C76603B00E2B024 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		82AF5A361C76603B00E2B024 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		82F18C861C6A7A3C00EE83AD /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				82391AEB1C63CCC300DCE963 /* ImagesTableViewController.m */,
 				823B1FF71C6D19130093DAD1 /* MediaTableViewCell.h */,
 				823B1FF81C6D19130093DAD1 /* MediaTableViewCell.m */,
+				8282C8E31C7F87BC00C27BB3 /* MediaFullScreenViewController.h */,
+				8282C8E41C7F87BC00C27BB3 /* MediaFullScreenViewController.m */,
 				82F18C861C6A7A3C00EE83AD /* User.h */,
 				82F18C871C6A7A3C00EE83AD /* User.m */,
 				82F18C891C6A7B3000EE83AD /* Media.h */,
@@ -419,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8282C8E51C7F87BC00C27BB3 /* MediaFullScreenViewController.m in Sources */,
 				82F18C881C6A7A3C00EE83AD /* User.m in Sources */,
 				82F18C8E1C6A7BF800EE83AD /* Comment.m in Sources */,
 				823B1FF91C6D19130093DAD1 /* MediaTableViewCell.m in Sources */,
