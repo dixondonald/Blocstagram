@@ -52,6 +52,32 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
+
+    UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    navBar.backgroundColor = [UIColor whiteColor];
+    
+    UINavigationItem *navItem = [[UINavigationItem alloc] init];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(shareIt)];
+    navItem.rightBarButtonItem = rightButton;
+    
+    navBar.items = @[ navItem ];
+    
+    [self.view addSubview:navBar];
+}
+
+- (void) shareIt {
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    
+    if (self.imageView.image) {
+        [itemsToShare addObject:self.imageView.image];
+    }
+    
+    if (itemsToShare.count > 0) {
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
+
 }
 
 - (void) viewWillLayoutSubviews {
