@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSLayoutConstraint *usernameAndCaptionLabelHeightConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *commentLabelHeightConstraint;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, strong) UITapGestureRecognizer *retryTapGestureRecognizer;
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
 
@@ -55,6 +56,11 @@ static NSParagraphStyle *paragraphStyle;
         self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
         self.tapGestureRecognizer.delegate = self;
         [self.mediaImageView addGestureRecognizer:self.tapGestureRecognizer];
+        
+        self.retryTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action: @selector(retryDownload:)];
+        self.retryTapGestureRecognizer.delegate = self;
+        self.retryTapGestureRecognizer.numberOfTouchesRequired = 2;
+        [self.mediaImageView addGestureRecognizer: self.retryTapGestureRecognizer];
         
         self.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressFired:)];
         self.longPressGestureRecognizer.delegate = self;
@@ -127,6 +133,10 @@ static NSParagraphStyle *paragraphStyle;
     if (sender.state == UIGestureRecognizerStateBegan) {
         [self.delegate cell:self didLongPressImageView:self.mediaImageView];
     }
+}
+
+- (void) retryDownload:(UITapGestureRecognizer *)sender{
+    [self.delegate cell:self didRetryImageView:self.mediaImageView];
 }
 
 #pragma mark - UIGestureRecognizerDelegate

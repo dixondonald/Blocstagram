@@ -92,6 +92,7 @@
     return cell;
 }
 
+
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
@@ -166,6 +167,12 @@
     MediaFullScreenViewController *fullScreenVC = [[MediaFullScreenViewController alloc] initWithMedia:cell.mediaItem];
     
     [self presentViewController:fullScreenVC animated:YES completion:nil];
+}
+
+- (void) cell:(MediaTableViewCell *)cell didRetryImageView:(UIImageView *)imageView {
+    
+    [[DataSource sharedInstance] downloadImageForMediaItem:cell.mediaItem];
+
 }
 
 - (void) cell:(MediaTableViewCell *)cell didLongPressImageView:(UIImageView *)imageView {
