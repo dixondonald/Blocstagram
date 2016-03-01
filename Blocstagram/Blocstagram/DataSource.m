@@ -40,7 +40,7 @@
         
         [mutableParameters addEntriesFromDictionary:parameters];
         
-        [self.instagramOperationManager GET:@"users/self/feed"
+        [self.instagramOperationManager GET:@"users/self/media/recent"
                                  parameters:mutableParameters
                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                         if ([responseObject isKindOfClass:[NSDictionary class]]) {
@@ -130,11 +130,14 @@
                                             mediaItem.image = responseObject;
                                             NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
                                             NSUInteger index = [mutableArrayWithKVO indexOfObject:mediaItem];
-                                            [mutableArrayWithKVO replaceObjectAtIndex:index withObject:mediaItem];
+                                            if (index != NSNotFound) {
+                                                [mutableArrayWithKVO replaceObjectAtIndex:index withObject:mediaItem];
+                                            }   else {
+                                                [mutableArrayWithKVO addObject:mediaItem];
+                                            }
                                         }
                                         
                                         [self saveImages];
-                                        
                                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                         NSLog(@"Error downloading image: %@", error);
                                     }];

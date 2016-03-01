@@ -172,7 +172,7 @@
 - (void) cell:(MediaTableViewCell *)cell didRetryImageView:(UIImageView *)imageView {
     
     [[DataSource sharedInstance] downloadImageForMediaItem:cell.mediaItem];
-
+    NSLog(@"retry");
 }
 
 - (void) cell:(MediaTableViewCell *)cell didLongPressImageView:(UIImageView *)imageView {
