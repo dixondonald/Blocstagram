@@ -44,6 +44,8 @@ static NSParagraphStyle *paragraphStyle;
     // Configure the view for the selected state
 }
 
+
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -112,8 +114,8 @@ static NSParagraphStyle *paragraphStyle;
         self.commentLabelHeightConstraint.identifier = @"Comment label height constraint";
         
         [self.contentView addConstraints:@[self.imageHeightConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint]];
-        
     }
+    
     return self;
 }
 
