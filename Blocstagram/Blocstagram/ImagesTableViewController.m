@@ -370,6 +370,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     if (indexPath) {
         [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
@@ -377,7 +378,7 @@
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-    
+    [super viewWillDisappear:animated];
 }
 
 @end
